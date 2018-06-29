@@ -77,6 +77,22 @@ public class principal extends javax.swing.JFrame {
         cb_albumsong = new javax.swing.JComboBox<>();
         sp_duracion = new javax.swing.JSpinner();
         jButton13 = new javax.swing.JButton();
+        jd_login = new javax.swing.JDialog();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        tf_logname = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        tf_logpass = new javax.swing.JPasswordField();
+        jButton15 = new javax.swing.JButton();
+        jd_submenu = new javax.swing.JDialog();
+        jButton16 = new javax.swing.JButton();
+        jLabel21 = new javax.swing.JLabel();
+        jButton17 = new javax.swing.JButton();
+        jButton18 = new javax.swing.JButton();
+        jButton19 = new javax.swing.JButton();
+        jButton20 = new javax.swing.JButton();
+        jLabel22 = new javax.swing.JLabel();
+        user_actual = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -424,6 +440,120 @@ public class principal extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel15.setText("LOGIN");
+
+        jLabel19.setText("USERNAME:");
+
+        jLabel20.setText("PASSWORD:");
+
+        jButton15.setText("Log In");
+        jButton15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton15MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_loginLayout = new javax.swing.GroupLayout(jd_login.getContentPane());
+        jd_login.getContentPane().setLayout(jd_loginLayout);
+        jd_loginLayout.setHorizontalGroup(
+            jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_loginLayout.createSequentialGroup()
+                .addContainerGap(69, Short.MAX_VALUE)
+                .addComponent(jLabel15)
+                .addGap(54, 54, 54))
+            .addGroup(jd_loginLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel19)
+                    .addComponent(jLabel20))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tf_logname)
+                    .addComponent(tf_logpass))
+                .addContainerGap())
+            .addGroup(jd_loginLayout.createSequentialGroup()
+                .addGap(83, 83, 83)
+                .addComponent(jButton15)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jd_loginLayout.setVerticalGroup(
+            jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_loginLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel15)
+                .addGap(37, 37, 37)
+                .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(tf_logname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(63, 63, 63)
+                .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(tf_logpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addComponent(jButton15)
+                .addContainerGap())
+        );
+
+        jButton16.setText("Explorar");
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel21.setText("TU REPRODUCTOR DE MUSICA");
+
+        jButton17.setText("Crear Playlist");
+
+        jButton18.setText("Ver Playlist");
+
+        jButton19.setText("Ver Favoritos");
+
+        jButton20.setText("Salir");
+
+        jLabel22.setText("User:");
+
+        javax.swing.GroupLayout jd_submenuLayout = new javax.swing.GroupLayout(jd_submenu.getContentPane());
+        jd_submenu.getContentPane().setLayout(jd_submenuLayout);
+        jd_submenuLayout.setHorizontalGroup(
+            jd_submenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_submenuLayout.createSequentialGroup()
+                .addGroup(jd_submenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_submenuLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jd_submenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jd_submenuLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel22)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(user_actual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jd_submenuLayout.setVerticalGroup(
+            jd_submenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_submenuLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel21)
+                .addGap(19, 19, 19)
+                .addGroup(jd_submenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel22)
+                    .addComponent(user_actual, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton16)
+                .addGap(18, 18, 18)
+                .addComponent(jButton17)
+                .addGap(18, 18, 18)
+                .addComponent(jButton18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton19)
+                .addGap(18, 18, 18)
+                .addComponent(jButton20)
+                .addContainerGap(35, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButton1.setText("Usuarios");
@@ -451,6 +581,11 @@ public class principal extends javax.swing.JFrame {
         jLabel1.setText("MENU PRINCIPAL");
 
         jButton4.setText("Log In");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
 
         jButton5.setText("Guardar Usuarios");
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -624,10 +759,11 @@ public class principal extends javax.swing.JFrame {
 
     private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
         // TODO add your handling code here:
-        album temp = (album)cb_albumsong.getSelectedItem();
+        album temp = (album) cb_albumsong.getSelectedItem();
         for (album t : albums) {
-            if(t == temp){
-                albums.get(albums.indexOf(t)).getSongs().add(new song(tf_songname.getText(), t.getArtist(), (Integer)sp_duracion.getValue(), tf_songgenero.getText()));
+            if (t == temp) {
+                albums.get(albums.indexOf(t)).getSongs().add(new song(tf_songname.getText(), t.getArtist(), (Integer) sp_duracion.getValue(), tf_songgenero.getText()));
+                
             }
         }
         JOptionPane.showMessageDialog(jd_newsong, "Cancion Creada Exitosamente!");
@@ -641,6 +777,34 @@ public class principal extends javax.swing.JFrame {
         jd_newsong.setLocationRelativeTo(this);
         jd_newsong.setVisible(true);
     }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        // TODO add your handling code here:
+        jd_login.setModal(true);
+        jd_login.pack();
+        jd_login.setLocationRelativeTo(this);
+        jd_login.setVisible(true);
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton15MouseClicked
+        // TODO add your handling code here:
+        String name = tf_logname.getText();
+        String pass = tf_logpass.getText();
+
+        for (user u : au.getListauser()) {
+            if (u.getUsername().equals(name) && u.getPassword().equals(pass)) {
+                JOptionPane.showMessageDialog(jd_login, "Bienvenido!");
+                useractual = au.getListauser().indexOf(u);
+                jd_submenu.setModal(true);
+                jd_submenu.pack();
+                jd_submenu.setLocationRelativeTo(this);
+                jd_submenu.setVisible(true);
+            }
+            else{
+                JOptionPane.showMessageDialog(jd_login, "Datos Incorrectos","Nel",JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_jButton15MouseClicked
     private void llenarcombodeletealbum() {
         DefaultComboBoxModel<album> model = new DefaultComboBoxModel<album>();
         for (album t : albums) {
@@ -661,7 +825,7 @@ public class principal extends javax.swing.JFrame {
             model.addColumn(col, rows.toArray());
         }
         jt_albums.setModel(model);
-        
+
     }
 
     /**
@@ -708,7 +872,13 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -722,10 +892,15 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -736,9 +911,11 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JDialog jd_albums;
+    private javax.swing.JDialog jd_login;
     private javax.swing.JDialog jd_newalbum;
     private javax.swing.JDialog jd_newsong;
     private javax.swing.JDialog jd_newuser;
+    private javax.swing.JDialog jd_submenu;
     private javax.swing.JDialog jd_users;
     private javax.swing.JList<String> jl_users;
     private javax.swing.JTable jt_albums;
@@ -746,12 +923,16 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JTextField tf_alart;
     private javax.swing.JTextField tf_alname;
     private javax.swing.JTextField tf_edad;
+    private javax.swing.JTextField tf_logname;
+    private javax.swing.JPasswordField tf_logpass;
     private javax.swing.JTextField tf_name;
     private javax.swing.JPasswordField tf_password;
     private javax.swing.JTextField tf_songgenero;
     private javax.swing.JTextField tf_songname;
     private javax.swing.JTextField tf_username;
+    private javax.swing.JLabel user_actual;
     // End of variables declaration//GEN-END:variables
     adminUser au = new adminUser("./users.rt");
     ArrayList<album> albums = new ArrayList();
+    int useractual = 0;
 }
