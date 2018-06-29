@@ -18,7 +18,7 @@ public class user implements Serializable {
     private String username;
     private String password;
     private ArrayList<song> favoritos = new ArrayList();
-    private ArrayList<album> playlist = new ArrayList();
+    private ArrayList<playlist> playlists = new ArrayList();
     private static final long SerialVersonUID = 777L;
 
     public user() {
@@ -71,12 +71,12 @@ public class user implements Serializable {
         this.favoritos = favoritos;
     }
 
-    public ArrayList<album> getPlaylist() {
-        return playlist;
+    public ArrayList<playlist> getPlaylist() {
+        return playlists;
     }
 
-    public void setPlaylist(ArrayList<album> playlist) {
-        this.playlist = playlist;
+    public void setPlaylist(ArrayList<playlist> playlists) {
+        this.playlists = playlists;
     }
 
     @Override
