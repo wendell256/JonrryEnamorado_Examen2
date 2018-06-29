@@ -5,8 +5,11 @@
  */
 package jonrryenamorado_examen2;
 
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -49,6 +52,20 @@ public class principal extends javax.swing.JFrame {
         tf_username = new javax.swing.JTextField();
         jButton10 = new javax.swing.JButton();
         tf_password = new javax.swing.JPasswordField();
+        jd_albums = new javax.swing.JDialog();
+        jLabel9 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jt_albums = new javax.swing.JTable();
+        jButton9 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        cb_delalbum = new javax.swing.JComboBox<album>();
+        jd_newalbum = new javax.swing.JDialog();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        tf_alname = new javax.swing.JTextField();
+        tf_alart = new javax.swing.JTextField();
+        jButton14 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -198,6 +215,131 @@ public class principal extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel9.setText("ALBUMS");
+
+        jt_albums.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Album", "Album 2", "Album 3", "Album 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jt_albums);
+
+        jButton9.setText("Crear");
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton9MouseClicked(evt);
+            }
+        });
+
+        jButton12.setText("Eliminar");
+        jButton12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton12MouseClicked(evt);
+            }
+        });
+
+        cb_delalbum.setModel(new DefaultComboBoxModel<album>()
+        );
+
+        javax.swing.GroupLayout jd_albumsLayout = new javax.swing.GroupLayout(jd_albums.getContentPane());
+        jd_albums.getContentPane().setLayout(jd_albumsLayout);
+        jd_albumsLayout.setHorizontalGroup(
+            jd_albumsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_albumsLayout.createSequentialGroup()
+                .addGroup(jd_albumsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_albumsLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton9)
+                        .addGap(142, 142, 142)
+                        .addComponent(cb_delalbum, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton12)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 672, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_albumsLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel9)
+                .addGap(248, 248, 248))
+        );
+        jd_albumsLayout.setVerticalGroup(
+            jd_albumsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_albumsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addGroup(jd_albumsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton9)
+                    .addComponent(jButton12)
+                    .addComponent(cb_delalbum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
+        );
+
+        jLabel10.setText("NOMBRE:");
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel11.setText("NEW ALBUM");
+
+        jLabel12.setText("ARTISTA:");
+
+        jButton14.setText("Guardar");
+        jButton14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton14MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_newalbumLayout = new javax.swing.GroupLayout(jd_newalbum.getContentPane());
+        jd_newalbum.getContentPane().setLayout(jd_newalbumLayout);
+        jd_newalbumLayout.setHorizontalGroup(
+            jd_newalbumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_newalbumLayout.createSequentialGroup()
+                .addGroup(jd_newalbumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jd_newalbumLayout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addGroup(jd_newalbumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jd_newalbumLayout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addGap(18, 18, 18)
+                                .addComponent(tf_alart))
+                            .addGroup(jd_newalbumLayout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addGap(18, 18, 18)
+                                .addComponent(tf_alname))))
+                    .addGroup(jd_newalbumLayout.createSequentialGroup()
+                        .addContainerGap(100, Short.MAX_VALUE)
+                        .addComponent(jLabel11)))
+                .addGap(72, 72, 72))
+            .addGroup(jd_newalbumLayout.createSequentialGroup()
+                .addGap(153, 153, 153)
+                .addComponent(jButton14)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jd_newalbumLayout.setVerticalGroup(
+            jd_newalbumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_newalbumLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jd_newalbumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jd_newalbumLayout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addGap(37, 37, 37)
+                        .addComponent(jLabel10))
+                    .addComponent(tf_alname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(jd_newalbumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(tf_alart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addComponent(jButton14)
+                .addContainerGap())
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButton1.setText("Usuarios");
@@ -208,6 +350,11 @@ public class principal extends javax.swing.JFrame {
         });
 
         jButton2.setText("Albums");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
 
         jButton3.setText("Canciones");
 
@@ -336,6 +483,76 @@ public class principal extends javax.swing.JFrame {
         jl_users.setModel(model);
     }//GEN-LAST:event_jButton11MouseClicked
 
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        llenartable();
+        llenarcombodeletealbum();
+        jd_albums.setModal(true);
+        jd_albums.pack();
+        jd_albums.setLocationRelativeTo(this);
+        jd_albums.setVisible(true);
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
+        // TODO add your handling code here:
+        albums.add(new album(tf_alname.getText(), tf_alart.getText()));
+        llenartable();
+        llenarcombodeletealbum();
+        JOptionPane.showMessageDialog(jd_newalbum, "Creado exitosamente!");
+    }//GEN-LAST:event_jButton14MouseClicked
+
+    private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
+        // TODO add your handling code here:
+        jd_newalbum.setModal(true);
+        jd_newalbum.pack();
+        jd_newalbum.setLocationRelativeTo(this);
+        jd_newalbum.setVisible(true);
+    }//GEN-LAST:event_jButton9MouseClicked
+
+    private void jButton12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseClicked
+        // TODO add your handling code here:
+        try {
+
+            for (album t : albums) {
+                if (t == cb_delalbum.getSelectedItem()) {
+                    albums.remove(t);
+                }
+            }
+            llenartable();
+            llenarcombodeletealbum();
+            JOptionPane.showMessageDialog(jd_albums, "Eliminado con exito!");
+        } catch (Exception e) {
+            for (album t : albums) {
+                if (t == cb_delalbum.getSelectedItem()) {
+                    albums.remove(t);
+                }
+            }
+            llenartable();
+            llenarcombodeletealbum();
+            JOptionPane.showMessageDialog(jd_albums, "Eliminado con exito!");
+        }
+    }//GEN-LAST:event_jButton12MouseClicked
+    private void llenarcombodeletealbum() {
+        DefaultComboBoxModel<album> model = new DefaultComboBoxModel<album>();
+        for (album t : albums) {
+            model.addElement(t);
+        }
+        cb_delalbum.setModel(model);
+    }
+
+    private void llenartable() {
+        DefaultTableModel model = new DefaultTableModel();
+        for (album t : albums) {
+            Object col = t.getName();
+            ArrayList<Object> rows = new ArrayList();
+            for (song s : t.getSongs()) {
+                rows.add(s.getName());
+            }
+            model.addColumn(col, rows.toArray());
+        }
+        jt_albums.setModel(model);
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -372,9 +589,12 @@ public class principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JComboBox<album> cb_delalbum;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -382,7 +602,11 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -390,14 +614,22 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JDialog jd_albums;
+    private javax.swing.JDialog jd_newalbum;
     private javax.swing.JDialog jd_newuser;
     private javax.swing.JDialog jd_users;
     private javax.swing.JList<String> jl_users;
+    private javax.swing.JTable jt_albums;
+    private javax.swing.JTextField tf_alart;
+    private javax.swing.JTextField tf_alname;
     private javax.swing.JTextField tf_edad;
     private javax.swing.JTextField tf_name;
     private javax.swing.JPasswordField tf_password;
     private javax.swing.JTextField tf_username;
     // End of variables declaration//GEN-END:variables
     adminUser au = new adminUser("./users.rt");
+    ArrayList<album> albums = new ArrayList();
 }
