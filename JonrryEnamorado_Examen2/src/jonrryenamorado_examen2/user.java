@@ -5,19 +5,21 @@
  */
 package jonrryenamorado_examen2;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author wende
  */
-public class user {
+public class user implements Serializable {
     private String name;
     private String age;
     private String username;
     private String password;
     private ArrayList<song> favoritos = new ArrayList();
     private ArrayList<album> playlist = new ArrayList();
+    private static final long SerialVersonUID = 777L;
 
     public user() {
     }
