@@ -12,13 +12,13 @@ package jonrryenamorado_examen2;
 public class song {
     private String name;
     private String artista;
-    private String seconds;
+    private int seconds;
     private String genero;
 
     public song() {
     }
 
-    public song(String name, String artista, String seconds, String genero) {
+    public song(String name, String artista, int seconds, String genero) {
         this.name = name;
         this.artista = artista;
         this.seconds = seconds;
@@ -41,11 +41,11 @@ public class song {
         this.artista = artista;
     }
 
-    public String getSeconds() {
+    public int getSeconds() {
         return seconds;
     }
 
-    public void setSeconds(String seconds) {
+    public void setSeconds(int seconds) {
         this.seconds = seconds;
     }
 

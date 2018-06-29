@@ -66,6 +66,17 @@ public class principal extends javax.swing.JFrame {
         tf_alname = new javax.swing.JTextField();
         tf_alart = new javax.swing.JTextField();
         jButton14 = new javax.swing.JButton();
+        jd_newsong = new javax.swing.JDialog();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        tf_songname = new javax.swing.JTextField();
+        tf_songgenero = new javax.swing.JTextField();
+        cb_albumsong = new javax.swing.JComboBox<>();
+        sp_duracion = new javax.swing.JSpinner();
+        jButton13 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -340,6 +351,79 @@ public class principal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel13.setText("NEW SONG");
+
+        jLabel14.setText("NOMBRE:");
+
+        jLabel16.setText("DURACION:");
+
+        jLabel17.setText("GENERO:");
+
+        jLabel18.setText("PERTENECE A:");
+
+        jButton13.setText("Guardar");
+        jButton13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton13MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_newsongLayout = new javax.swing.GroupLayout(jd_newsong.getContentPane());
+        jd_newsong.getContentPane().setLayout(jd_newsongLayout);
+        jd_newsongLayout.setHorizontalGroup(
+            jd_newsongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_newsongLayout.createSequentialGroup()
+                .addGroup(jd_newsongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_newsongLayout.createSequentialGroup()
+                        .addGap(98, 98, 98)
+                        .addComponent(jLabel13))
+                    .addGroup(jd_newsongLayout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addGroup(jd_newsongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel17)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel14))
+                        .addGap(18, 18, 18)
+                        .addGroup(jd_newsongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cb_albumsong, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tf_songgenero)
+                            .addGroup(jd_newsongLayout.createSequentialGroup()
+                                .addGroup(jd_newsongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton13)
+                                    .addComponent(tf_songname, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(sp_duracion, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addContainerGap(67, Short.MAX_VALUE))
+        );
+        jd_newsongLayout.setVerticalGroup(
+            jd_newsongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_newsongLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jd_newsongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jd_newsongLayout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addGap(18, 18, 18)
+                        .addGroup(jd_newsongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel14)
+                            .addComponent(tf_songname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jd_newsongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(sp_duracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel16))
+                        .addGap(18, 18, 18)
+                        .addGroup(jd_newsongLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tf_songgenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel17))
+                        .addGap(18, 18, 18)
+                        .addComponent(cb_albumsong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel18))
+                .addGap(50, 50, 50)
+                .addComponent(jButton13)
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButton1.setText("Usuarios");
@@ -357,6 +441,11 @@ public class principal extends javax.swing.JFrame {
         });
 
         jButton3.setText("Canciones");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setText("MENU PRINCIPAL");
@@ -532,12 +621,33 @@ public class principal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(jd_albums, "Eliminado con exito!");
         }
     }//GEN-LAST:event_jButton12MouseClicked
+
+    private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
+        // TODO add your handling code here:
+        album temp = (album)cb_albumsong.getSelectedItem();
+        for (album t : albums) {
+            if(t == temp){
+                albums.get(albums.indexOf(t)).getSongs().add(new song(tf_songname.getText(), t.getArtist(), (Integer)sp_duracion.getValue(), tf_songgenero.getText()));
+            }
+        }
+        JOptionPane.showMessageDialog(jd_newsong, "Cancion Creada Exitosamente!");
+    }//GEN-LAST:event_jButton13MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+        llenarcombodeletealbum();
+        jd_newsong.setModal(true);
+        jd_newsong.pack();
+        jd_newsong.setLocationRelativeTo(this);
+        jd_newsong.setVisible(true);
+    }//GEN-LAST:event_jButton3MouseClicked
     private void llenarcombodeletealbum() {
         DefaultComboBoxModel<album> model = new DefaultComboBoxModel<album>();
         for (album t : albums) {
             model.addElement(t);
         }
         cb_delalbum.setModel(model);
+        cb_albumsong.setModel(model);
     }
 
     private void llenartable() {
@@ -551,6 +661,7 @@ public class principal extends javax.swing.JFrame {
             model.addColumn(col, rows.toArray());
         }
         jt_albums.setModel(model);
+        
     }
 
     /**
@@ -589,11 +700,13 @@ public class principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<album> cb_albumsong;
     public javax.swing.JComboBox<album> cb_delalbum;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -607,6 +720,11 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -619,15 +737,19 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JDialog jd_albums;
     private javax.swing.JDialog jd_newalbum;
+    private javax.swing.JDialog jd_newsong;
     private javax.swing.JDialog jd_newuser;
     private javax.swing.JDialog jd_users;
     private javax.swing.JList<String> jl_users;
     private javax.swing.JTable jt_albums;
+    private javax.swing.JSpinner sp_duracion;
     private javax.swing.JTextField tf_alart;
     private javax.swing.JTextField tf_alname;
     private javax.swing.JTextField tf_edad;
     private javax.swing.JTextField tf_name;
     private javax.swing.JPasswordField tf_password;
+    private javax.swing.JTextField tf_songgenero;
+    private javax.swing.JTextField tf_songname;
     private javax.swing.JTextField tf_username;
     // End of variables declaration//GEN-END:variables
     adminUser au = new adminUser("./users.rt");
