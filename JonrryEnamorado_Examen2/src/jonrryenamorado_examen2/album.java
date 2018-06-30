@@ -5,16 +5,18 @@
  */
 package jonrryenamorado_examen2;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author wende
  */
-public class album {
+public class album implements Serializable  {
     private String name;
     private String artist;
     private ArrayList<song> songs = new ArrayList();
+    private static final long SerialVersonUID = 777L;
 
     public album() {
     }

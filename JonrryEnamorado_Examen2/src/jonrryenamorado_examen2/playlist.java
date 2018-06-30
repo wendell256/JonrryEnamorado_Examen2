@@ -5,15 +5,18 @@
  */
 package jonrryenamorado_examen2;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author wende
  */
-public class playlist {
+public class playlist implements Serializable {
+
     private String name;
     private ArrayList<song> songs = new ArrayList();
+    private static final long SerialVersonUID = 777L;
 
     public playlist() {
     }
@@ -42,6 +45,5 @@ public class playlist {
     public String toString() {
         return name;
     }
-    
-    
+
 }

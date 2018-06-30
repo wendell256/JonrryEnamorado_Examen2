@@ -5,15 +5,18 @@
  */
 package jonrryenamorado_examen2;
 
+import java.io.Serializable;
+
 /**
  *
  * @author wende
  */
-public class song {
+public class song implements Serializable {
     private String name;
     private String artista;
     private int seconds;
     private String genero;
+    private static final long SerialVersonUID = 777L;
 
     public song() {
     }

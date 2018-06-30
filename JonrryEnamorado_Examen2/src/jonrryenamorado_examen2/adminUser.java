@@ -10,18 +10,21 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author wende
  */
-public class adminUser {
+public class adminUser implements Serializable {
+
     private ArrayList<user> listauser = new ArrayList();
     private File archivo = null;
+    private static final long SerialVersonUID = 777L;
 
     public adminUser(String path) {
-    archivo = new File(path);
+        archivo = new File(path);
     }
 
     public ArrayList<user> getListauser() {
@@ -39,11 +42,11 @@ public class adminUser {
     public void setArchivo(File archivo) {
         this.archivo = archivo;
     }
-    
-    public void setUser(user p){
+
+    public void setUser(user p) {
         this.listauser.add(p);
     }
-    
+
     public void cargarArchivo() {
         try {
             listauser = new ArrayList();
@@ -65,7 +68,7 @@ public class adminUser {
             ex.printStackTrace();
         }
     }
-    
+
     public void escribirArchivo() {
         FileOutputStream fw = null;
         ObjectOutputStream bw = null;
