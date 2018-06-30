@@ -25,6 +25,7 @@ public class principal extends javax.swing.JFrame {
     public principal() {
         initComponents();
         au.cargarArchivo();
+        System.out.println("user = rutten\npass = 123");
     }
 
     /**
@@ -142,6 +143,11 @@ public class principal extends javax.swing.JFrame {
         });
 
         jButton8.setText("Delete");
+        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton8MouseClicked(evt);
+            }
+        });
 
         jScrollPane2.setViewportView(jl_users);
 
@@ -408,6 +414,8 @@ public class principal extends javax.swing.JFrame {
 
         jLabel18.setText("PERTENECE A:");
 
+        sp_duracion.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+
         jButton13.setText("Guardar");
         jButton13.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -557,6 +565,11 @@ public class principal extends javax.swing.JFrame {
         });
 
         jButton20.setText("Salir");
+        jButton20.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton20MouseClicked(evt);
+            }
+        });
 
         jLabel22.setText("User:");
 
@@ -942,7 +955,7 @@ public class principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         DefaultListModel model = new DefaultListModel();
         for (user t : au.getListauser()) {
-            model.addElement(t.getName() + "(" + t.getUsername() + ")");
+            model.addElement(t);
         }
         jl_users.setModel(model);
         jd_users.setModal(false);
@@ -961,6 +974,7 @@ public class principal extends javax.swing.JFrame {
         au.setUser(new user(tf_name.getText(), tf_edad.getText(), tf_username.getText(), tf_password.getText()));
         au.escribirArchivo();
         JOptionPane.showMessageDialog(jd_newuser, "Usuario guardado en ARRAYLIST y en ARCHIVO");
+        reloaduser();
     }//GEN-LAST:event_jButton10MouseClicked
 
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
@@ -975,11 +989,17 @@ public class principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         DefaultListModel model = new DefaultListModel();
         for (user t : au.getListauser()) {
-            model.addElement(t.getName() + "(" + t.getUsername() + ")");
+            model.addElement(t);
         }
         jl_users.setModel(model);
     }//GEN-LAST:event_jButton11MouseClicked
-
+    public void reloaduser() {
+        DefaultListModel model = new DefaultListModel();
+        for (user t : au.getListauser()) {
+            model.addElement(t);
+        }
+        jl_users.setModel(model);
+    }
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
         llenartable();
@@ -1063,7 +1083,7 @@ public class principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         String name = tf_logname.getText();
         String pass = tf_logpass.getText();
-
+        boolean ver = false;
         for (user u : au.getListauser()) {
             if (u.getUsername().equals(name) && u.getPassword().equals(pass)) {
                 JOptionPane.showMessageDialog(jd_login, "Bienvenido!");
@@ -1074,10 +1094,11 @@ public class principal extends javax.swing.JFrame {
                 jd_submenu.setLocationRelativeTo(this);
                 jd_submenu.setVisible(true);
                 jd_login.setVisible(false);
-
-            } else {
-                JOptionPane.showMessageDialog(jd_login, "Datos Incorrectos", "Nel", JOptionPane.ERROR_MESSAGE);
+                ver = true;
             }
+        }
+        if (!ver) {
+            JOptionPane.showMessageDialog(jd_login, "Datos Incorrectos", "Nel", JOptionPane.ERROR_MESSAGE);
         }
         tf_logname.setText("");
         tf_logpass.setText("");
@@ -1112,6 +1133,8 @@ public class principal extends javax.swing.JFrame {
             jd_s_to_p.pack();
             jd_s_to_p.setLocationRelativeTo(this);
             jd_s_to_p.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(jd_users, "Selecciona una cancion de la lista!");
         }
     }//GEN-LAST:event_jButton21MouseClicked
 
@@ -1121,12 +1144,16 @@ public class principal extends javax.swing.JFrame {
             au.getListauser().get(useractual).getFavoritos().add(jl_songs.getSelectedValue());
             JOptionPane.showMessageDialog(jd_explorar, "Cancion Agregada a Favoritos!");
             au.escribirArchivo();
+        }else{
+            JOptionPane.showMessageDialog(jd_users, "Selecciona una cancion de la lista!");
         }
     }//GEN-LAST:event_jButton22MouseClicked
 
     private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
         // TODO add your handling code here:
         String tmp = JOptionPane.showInputDialog("Ingresar nombre de playlist");
+        try {
+            
         if (tmp.isEmpty()) {
 
         } else {
@@ -1135,6 +1162,8 @@ public class principal extends javax.swing.JFrame {
             au.getListauser().get(useractual).getPlaylist().add(p);
             JOptionPane.showMessageDialog(jd_submenu, "Playlist Agregada!");
             au.escribirArchivo();
+        }
+        } catch (Exception e) {
         }
 
 
@@ -1180,6 +1209,8 @@ public class principal extends javax.swing.JFrame {
             jd_play.setVisible(true);
             hh = new HiloHora(jlb_time, jl_favs.getSelectedValue().getSeconds(), pgb_time);
             hh.start();
+        }else{
+            JOptionPane.showMessageDialog(jd_users, "Selecciona una cancion de la lista!");
         }
     }//GEN-LAST:event_jButton24MouseClicked
 
@@ -1200,6 +1231,8 @@ public class principal extends javax.swing.JFrame {
                     au.getListauser().get(useractual).getPlaylist().set(au.getListauser().get(useractual).getPlaylist().indexOf(p), p);
                 }
                 JOptionPane.showMessageDialog(jd_playlist, "Cancion Eliminada!");
+            }else{
+                JOptionPane.showMessageDialog(jd_users, "Selecciona una cancion de una playlist!");
             }
 
         } catch (Exception e) {
@@ -1223,8 +1256,40 @@ public class principal extends javax.swing.JFrame {
                     p.getSongs().add(añadir);
                 }
             }
+            JOptionPane.showMessageDialog(jd_s_to_p, "Cancion Agregada a PLaylist Exitosamente!");
+        }
+        else{
+            JOptionPane.showMessageDialog(jd_s_to_p, "Selecciona una playlist de la lista!");
         }
     }//GEN-LAST:event_jButton25MouseClicked
+
+    private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
+        // TODO add your handling code here:
+
+        try {
+            if (jl_users.getSelectedIndex() >= 0) {
+                user temp = jl_users.getSelectedValue();
+                for (user u : au.getListauser()) {
+                    if (u == temp) {
+                        au.getListauser().remove(u);
+                    }
+                }
+                JOptionPane.showMessageDialog(jd_users, "Usuario Eliminado!");
+            }
+            else{
+                JOptionPane.showMessageDialog(jd_users, "Selecciona un usuario de la playlist!");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(jd_users, "Usuario Eliminado!");
+        }
+        au.escribirArchivo();
+        reloaduser();
+    }//GEN-LAST:event_jButton8MouseClicked
+
+    private void jButton20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton20MouseClicked
+        // TODO add your handling code here:
+        jd_submenu.setVisible(false);
+    }//GEN-LAST:event_jButton20MouseClicked
 
     public void llenartree() {
         DefaultMutableTreeNode root = new DefaultMutableTreeNode();
@@ -1390,7 +1455,7 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JList<playlist> jl_añadiraplaylist;
     private javax.swing.JList<song> jl_favs;
     private javax.swing.JList<song> jl_songs;
-    private javax.swing.JList<String> jl_users;
+    private javax.swing.JList<user> jl_users;
     public javax.swing.JLabel jlb_song;
     public javax.swing.JLabel jlb_time;
     private javax.swing.JTable jt_albums;
@@ -1409,7 +1474,7 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JTextField tf_username;
     private javax.swing.JLabel user_actual;
     // End of variables declaration//GEN-END:variables
-    adminUser au = new adminUser("./users.rt");
+    adminUser au = new adminUser("./tali.siteamo");
     ArrayList<album> albums = new ArrayList();
     int useractual = 0;
     HiloHora hh;
